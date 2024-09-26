@@ -1,0 +1,30 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Wallpaper Settings">
+
+        <Preference
+            app:key="set_wallpaper"
+            app:title="Set Wallpaper" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Live Wallpaper Shader">
+
+        <SwitchPreferenceCompat
+            app:key="use_default"
+            app:summaryOff="User can select a custom glsl file."
+            app:summaryOn="The default shader will be used."
+            app:title="Use default" />
+
+        <Preference
+            app:dependency="use_default"
+            app:key="shader_selector"
+            app:summary="none, N/A, nullptr, nothing"
+            app:title="Select custom shader file." />
+
+        <EditTextPreference
+            app:key="custom_shader_uri"
+            app:title="Custom shader URI"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>
